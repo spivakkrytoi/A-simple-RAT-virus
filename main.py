@@ -3,26 +3,7 @@ import psutil
 import os
 import subprocess
 
-# Список необхідних бібліотек
-REQUIRED_PACKAGES = [
-    'flask',
-    'psutil'
-]
-
-def install_packages():
-    """
-    Встановлює всі необхідні бібліотеки.
-    """
-    for package in REQUIRED_PACKAGES:
-        try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-            print(f"Пакет {package} успішно встановлено.")
-        except subprocess.CalledProcessError:
-            print(f"Помилка при встановленні пакета {package}.")
-
 app = Flask(__name__)
-
-
 
 # Отримати список запущених процесів
 def get_processes():
